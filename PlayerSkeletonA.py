@@ -1,8 +1,3 @@
-'''PlayerSkeletonA.py
-The beginnings of an agent that might someday play Baroque Chess.
-
-'''
-
 import BC_state_etc as BC
 
 def makeMove(currentState, currentRemark, timelimit):

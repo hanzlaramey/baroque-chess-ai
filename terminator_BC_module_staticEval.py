@@ -1,19 +1,3 @@
-'''
-Zachary McNulty & Kuo Hong
-
-terminator_BC_module_staticEval.StopAsyncIteration
-
-This file contains the static evaluation function used by our agent
-to evaluate the state of a given board. It uses several heuristics
-to score each board including:
-    - which pieces remain
-    - how many pieces are frozen
-    - how "structured" are the pawns/pincers
-    - how well-defended is the king
-
-'''
-
-
 from BC_state_etc import BC_state
 import time
 
@@ -69,29 +53,12 @@ def static_eval(board):
 
             elif piece == 15 or (piece == 9 and 14 in all_neighbors):
                 white_score += weights['freezing'] * sum([PIECE_VALUES[x // 2] for x in all_neighbors if x % 2 == 0 ])
-
-
-            # find withdrawer score: higher score if withdrawer has a chance of capturing a good piece
-            # i.e. counts the neighbors of a withdrawer where there is an empty square in opposite direction
-#            elif piece == 10:
-#                takeable_neighbors = check_withdrawer(board, i, j)
-#                black_score += weights['withdraw'] * sum([PIECE_VALUES[x // 2] for x in takeable_neighbors if x % 2 == 1 ])
-#
-#            elif piece == 11:
-#                takeable_neighbors = check_withdrawer(board, i, j)
-#                white_score += weights['withdraw'] * sum([PIECE_VALUES[x // 2] for x in takeable_neighbors if x % 2 == 0 ])
-
-            # Pawn/pincer structure: Give points if the pawns have lots of self pinching power: i.e. they lie in an open
-            # line with another piece of theres, with at most one black piece between them
             elif piece == 2: # Black pincer
                 black_score += weights['pinch'] * check_pincer(board, i, j)
 
             elif piece == 3: # white pincer
                 white_score += weights['pinch'] * check_pincer(board, i, j)
 
-        
-            # check if king is well-defended. In this game, as most pieces capture by needing a line of site to the king
-            # it will be beneficial if we have a few friendly pieces nearby and less enemy pieces
             elif piece == 12: # black king
                 black_king_alive = True
                 black_score += weights['king_Def'] * sum([1 for x in all_neighbors if x % 2 == 0]) # friendly pieces

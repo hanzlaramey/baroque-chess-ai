@@ -1,21 +1,3 @@
-'''
-Zachary McNulty & Kuo Hong
-
-terminator_BC_module_validStates.py
-
-Given a BC_State board for a Baroque Chess Game, this returns all the possible
-moves for the player whose turn it currently is. It assumes a few things about the rules
-of the game
-    
-    - Leapers can only jump one piece at a time
-    - Imitators can freeze Freezers (and adjacent pieces) but the two do NOT cancel out
-    - King can move into check
-    - Imitators can only capture as one type of piece per move
-    - No "suicide" moves where frozen pieces sacrifice themselves in place of a move
-
-This method acts as a python generator, returning valid moves one at a time.
-
-'''
 # given a current Baroque Board, returns a generator which generates all the 
 # valid move for the player whose turn it currently is
 WHITE = 1

@@ -1,10 +1,3 @@
-'''Kuo Hong, Zachary McNulty
-terminator_BC_Player.py
-
-Agent file for playing Baroque Chess using the BaroqueGameMaster.py file.
-This file can be run to calculate the move of one state and also print out some useful statistics about the calculation.
-'''
-
 import BC_state_etc as BC
 import terminator_BC_module_validStates as vs
 import terminator_BC_module_staticEval as se
@@ -124,8 +117,7 @@ def nickname():
     return "Terminator"
 
 def introduce():
-    return '''I am the Terminator.  I come from the future where people actually play Baroque Chess.  My sole purpose is to destroy it so no one has to play this abomination.
-I was created by Kuo Hong (kuo22) and Zachary McNulty (zmcnulty)'''
+    return '''I am the UNH Player.  I come from the future where people actually play Baroque Chess.  My sole purpose is to destroy it so no one has to play this abomination.'''
 
 def prepare(player2Nickname):
     zh.init_table()
@@ -246,7 +238,7 @@ def demo_search(current_state, current_depth, max_ply, player, alpha, beta, time
     
 
 if __name__ == "__main__":
-    MAX_PLY = 3 # How many moves ahead to consider
+    MAX_PLY = 4 # How many moves ahead to consider
     ZOBRIST_HASHING = True # Use zobrist hashing if true
     TIME_LIMIT = 5 # Time limit to calculation in seconds
     SIDE = BLACK # Which side should make the move

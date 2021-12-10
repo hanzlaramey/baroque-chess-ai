@@ -1,13 +1,3 @@
-
-'''BaroqueGameMaster.py
-Formerly TimedGameMaster.py which was based on GameMaster.py which in turn is 
- based on code from RunKInARow.py
-
-S. Tanimoto, October 30, 2017.
- Status: Works with the "PlayerSkeleton" agents.
- Has support for validation of moves, when that module becomes available.
- 
-'''
 VERSION = '0.8-BETA'
 
 # Get names of players and time limit from the command line.
