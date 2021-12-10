@@ -6,7 +6,7 @@
 
 	Suppose the computation budget only allows us to arrive at level 2, then we evaluate the chess board for all possible situations at level 2 to get an evaluation score. We “transmit” all these values back to level 1 and have the Min player decide which move they will make. Obviously the Min player will choose the move that minimizes the score. Then level 1 again “transmits” the results back to level 0 and now we have the Max player make the choice. This time the max player will move in a way that maximizes the score.
 
-	# you can find the code for Minimax in terminator_BC_Player.py file
+	- you can find the code for Minimax in terminator_BC_Player.py file
 
 2. Alpha-Beta Pruning
 
@@ -19,7 +19,7 @@
 	3. at the minimizing node, if the current node value is smaller than beta, update beta with the current node value​
 	4. if alpha > beta, don’t need to go down to the child nodes of the current node
 
-	# you can find the code for Minimax in terminator_BC_Player.py file
+	- you can find the code for Minimax in terminator_BC_Player.py file
 
 3. Zobrist Hashing​
 
@@ -30,7 +30,8 @@
 	Zobrist hashing is used to create a hash for the chessboard: it maps the chessboard into a numeric value, an integer, so when we are at a state we hash the position into a numeric value and look up in the hash dictionary.​
 
 	If the same value is stored, we don’t need to evaluate the same position or chessboard state again. In this way, Zobrist Hashing reduces the computation cost by approximately 30% on the chessboard static evaluation.
-	# you can find the code for Minimax in terminator_BC_module_zobrist_hashing.py file
+	
+	- you can find the code for Minimax in terminator_BC_module_zobrist_hashing.py file
 
 4. Heuristics
 
