@@ -1,8 +1,3 @@
-'''PlayerSkeletonB.py
-The beginnings of an agent that might someday play Baroque Chess.
-
-'''
-
 import BC_state_etc as BC
 
 def makeMove(currentState, currentRemark, timelimit):
@@ -28,7 +23,7 @@ def nickname():
     return "Cheetie"
 
 def introduce():
-    return "I'm Cheetie Playah.  I haven't learned the rules of Baroque Chess yet."
+    return "I'm Hanzla Ramey.  I haven't learned the rules of Baroque Chess yet."
 
 def prepare(player2Nickname):
     pass
